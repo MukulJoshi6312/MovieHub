@@ -64,13 +64,13 @@ const MovieDetailPage = () => {
         </div>
 
         <div className="grid-cols-1 text-start ">
-        <h3  className="text-gradient text-center md:text-start text-4xl md:text-5xl lg:text-7xl font-bold">{movie.title}</h3>
-        <div className="flex flex-col md:flex-row items-center gap-2 ">
-        <p className="text-white md:text-orignal  my-1">{(movie.release_date).replaceAll('-','/')}</p>
-        <div className="flex flex-col md:flex-row gap-2">
+        <h3  className="text-gradient text-center md:text-start mt-4 md:mt-0 text-4xl md:text-5xl lg:text-7xl font-bold">{movie.title}</h3>
+        <div className="flex flex-col md:flex-row items-center  gap-2 my-4">
+        <p className="text-white md:text-orignal  my-1 text-start w-full md:w-fit font-bold">{(movie.release_date).replaceAll('-','/')}</p>
+        <div className="flex flex-col md:flex-row gap-2 text-start w-full">
         {
             movie.genres.map((genre)=>
-                <li key={genre.name} className="text-white list-none"><span>•</span> {genre.name}</li>
+                <li key={genre.name} className="text-white   list-none"><span>•</span> {genre.name}</li>
             )
         }
         </div>
