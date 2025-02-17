@@ -4,6 +4,7 @@ import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
 import { useDebounce } from "react-use";
 import { getTrendingMovie, updateSearchCount } from "./appwrite";
+import { Link } from "react-router-dom";
 
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -42,6 +43,7 @@ const App = () => {
           setMoviesList([])
           return
         }
+        console.log(data.results)
         setMoviesList(data.results || []);
         if(query && data.results.length > 0){
           await updateSearchCount(query,data.results[0]);
@@ -92,6 +94,8 @@ const App = () => {
             <ul>
               {trendingMovies.map((movie,index)=>(
                 <li key={movie.$id}>
+                  { console.log("Movie id" ,movie.movie_id) }
+
                   <p>{index+1}</p>
                   <img src={movie.poster_url} alt={movie.title} />
                 </li>
@@ -106,7 +110,10 @@ const App = () => {
             className="text-red-500">{errorMessage}</p> ) : ( <ul>
 
                 {moviesList.map((movie) => (
-                  <MovieCard key={movie.id} movie={movie}/>
+                
+                  <Link to={`/movie/${movie.id}`} key={movie.id}>
+                    <MovieCard movie={movie}/>
+                  </Link>
                 ))}
 
             </ul> )
