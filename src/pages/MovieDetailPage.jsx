@@ -77,11 +77,12 @@ const MovieDetailPage = () => {
         </div>
 
         <div className="flex items-center gap-3">
-        <div className="rating movie-card w-fit">
-            <span className="text-3xl text-white font-bold">{movie.vote_average.toFixed(1)}/10</span>
+        <div className="rating movie-card w-fit flex gap-1">
+        <img src="../star.svg" alt="Star image"  className=" w-6"/>
+        <span className="text-3xl text-white font-bold">{movie.vote_average.toFixed(1)}/10</span>
         </div>
         <div className="duration">
-                <span className="text-white">{Math.floor(movie.runtime/60).toFixed()}h {" "} {movie.runtime%60}m</span>
+                <span className="text-white">Watch Time : {Math.floor(movie.runtime/60).toFixed()}h {" "} {movie.runtime%60}m</span>
         </div>
         </div>
 
