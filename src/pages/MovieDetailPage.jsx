@@ -31,7 +31,6 @@ const MovieDetailPage = () => {
         }
 
         const data = await response.json();
-        console.log(data)
         setMovie(data);
       } catch (error) {
         setError(error.message);
