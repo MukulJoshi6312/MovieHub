@@ -55,6 +55,7 @@ const MovieDetailPage = () => {
         <img className="w-full h-screen hidden md:block bg-contain"
         src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} />
         </div>
+        <div className="pattern absolute top-0 block md:hidden"></div>
         <div className="absolute top-0  md:bg-gray-900/80 mx-auto w-full h-screen">
 
         <div className="grid grid-cols-1 md:grid-cols-2 wrapper  md:mt-16 "> 
